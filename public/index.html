@@ -1,14 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, World!</title>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+th{
+	background-color: #dedede;
+}
+
+th,h2{
+	font-family: Arial, Verdana;
+}
+
+.cen {
+	text-align: center;
+}
+</style>
 </head>
+
 <body>
-    <h1>Hello, World!</h1>
-    <p>Aceasta este o pagină HTML simplă servită de serverul Node.js.</p>
-    <br/>
-    <a href="https://github.com/BalogDavid/ProgramareWEB">https://github.com/BalogDavid/ProgramareWEB</a>
+
+<h2>Referințe bibliografice</h2>
+<table style="width:200">
+  <tr>
+    <th>Capitol</th>
+    <th class="cen">Ord</th>
+    <th colspan="2">Titlu</th>
+  </tr>
+  <tr>
+    <td rowspan="3">HTML</td>
+    <td class="cen">1</td>
+    <td><b>Beginning HTML and CSS</b><br/><i>Rob Larsen</i>, Wrox, 2013</td>
+	<td><a href="http://it-ebooks.info/book/1927/" title="click pentru detalii"><img src="http://it-ebooks.info/images/ebooks/2/beginning_html_and_css.jpg" width="80"></a></td>
+  </tr>
+  <tr>
+    <td class="cen">2</td>
+    <td><b>Head First HTML and CSS, 2nd Edition</b><br/><i>E. Robson, E. Freeman</i>, O'Reilly Media, 2012</td>
+	<td><a href="http://www.it-ebooks.info/book/921/" title="click pentru detalii">
+	<img src="http://it-ebooks.info/images/ebooks/3/head_first_html_and_css_2nd_edition.jpg" width="80"></a></td>
+  </tr>
+  <tr>
+    <td class="cen">3</td>
+    <td><b>Build Your Own Web Site, 2nd Edition</b><br/><i>Ian Lloyd</i>, SitePoint, 2008</td>
+	<td><a href="http://it-ebooks.info/book/3066/" title="click pentru detalii">
+	<img src="http://it-ebooks.info/images/ebooks/7/build_your_own_web_site_2nd_edition.jpg" width="80"></a></td>
+  </tr>
+  <tr>
+    <td rowspan="2">PHP</td>
+    <td class="cen">4</td>
+    <td><b>Jump Start PHP</b><br/><i>Callum Hopkins</i>, SitePoint, 2013</td>
+	<td><a href="http://it-ebooks.info/book/4517/" title="click pentru detalii">
+	<img src="http://it-ebooks.info/images/ebooks/7/jump_start_php.jpg" width="80"></a></td>
+  </tr>
+  <tr>
+    <td class="cen">5</td>
+    <td><b>Learning PHP, MySQL, JavaScript, <br/>CSS & HTML5, 3rd Edition</b><br/><i>Robin Nixon</i>, O'Reilly Media, 2014</td>
+	<td><a href="http://it-ebooks.info/book/3344/" title="click pentru detalii">
+	<img src="http://it-ebooks.info/images/ebooks/3/learning_php_mysql_javascript_css__html5_3rd_edition.jpg" width="80"></a></td>
+  </tr>
+  
+  </table>
 </body>
 </html>
