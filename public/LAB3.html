@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carti</title>
+    <style>
+        .bookContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .book {
+            width: calc(33.33% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .book img {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <h1>Listă de cărți</h1>
-    <div id="bookList"></div>
+    <div id="bookList" class="bookContainer"></div>
 
     <script>
         var books = [
@@ -36,10 +51,11 @@
         for (var i = 0; i < books.length; i++) {
             var book = books[i];
             var bookDiv = document.createElement("div");
-            bookDiv.innerHTML = "<img src='" + book.imagine + "' width='100'><br>" +
-                                "<strong>Titlu:</strong> " + book.titlu + "<br>" +
-                                "<strong>Autor:</strong> " + book.autor + "<br>" +
-                                "<strong>An:</strong> " + book.an + "<br><br>";
+            bookDiv.classList.add("book");
+            bookDiv.innerHTML = "<img src='" + book.imagine + "'>" +
+                                "<p><strong>Titlu:</strong> " + book.titlu + "</p>" +
+                                "<p><strong>Autor:</strong> " + book.autor + "</p>" +
+                                "<p><strong>An:</strong> " + book.an + "</p>";
             bookListDiv.appendChild(bookDiv);
         }
     </script>
