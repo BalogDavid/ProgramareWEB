@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carti</title>
+    <title>Books</title>
     <style>
         .bookContainer {
             display: flex;
@@ -14,6 +14,11 @@
             width: calc(33.33% - 20px);
             padding: 10px;
             border: 1px solid #ccc;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .book:hover {
+            background-color: #999;
         }
         .book img {
             width: 100%;
@@ -21,30 +26,68 @@
     </style>
 </head>
 <body>
-    <h1>Listă de cărți</h1>
+    <h1>List of Books</h1>
     <div id="bookList" class="bookContainer"></div>
 
     <script>
         var books = [
             {
-                imagine: "http://cti.ubm.ro/prw/03/book-icon.png",
-                titlu: "Eloquent Javascript, 3rd Edition",
+                imagine: "01.jpg",
+                titlu: "The Joy of Javascript",
+                autor: "Luis Atencio",
+                an: 2021,
+                link: "https://github.com/JoyOfJavaScript/joj"
+            },
+            {
+                imagine: "02.jpg",
+                titlu: "JavaScript from Beginner to Professional",
+                autor: "Laurence Lars Svekis, Maaike van Putten, Rob Percival",
+                link: "https://www.libristo.ro/ro/carte/javascript-from-beginner-to-professional_38446600"
+            },
+            {
+                imagine: "03.jpg",
+                titlu: "JavaScript From Zero to Hero",
+                autor: "Rick Sekuloski",
+                an: 2022,
+                link: "https://www.amazon.com/JavaScript-Zero-Hero-Complete-Programming-ebook/dp/B09R73RWH2"
+            },
+            {
+                imagine: "04.jpg",
+                titlu: "Javascript: Javascript basics for Beginners",
+                autor: "Andy Vickler",
+                an: 2021,
+                link: "https://www.amazon.com/Javascript-basics-Beginners-Andy-Vickler-ebook/dp/B08XPQRFJK/"
+            },
+            {
+                imagine: "05.jpg",
+                titlu: "MERN Projects for Beginners",
+                autor: "Nabendu Biswas",
+                an: 2021
+            },
+            {
+                imagine: "06.png",
+                titlu: "Eloquent JavaScript, 3rd Edition",
                 autor: "Marijn Haverbeke",
+                link: "https://www.amazon.com/Eloquent-JavaScript-3rd-Introduction-Programming-ebook/dp/B07C96Q217/"
+            },
+            {
+                imagine: "07.png",
+                titlu: "Learn JavaScript Quickly",
+                autor: "Unknown",
+                an: 2020
+            },
+            {
+                imagine: "08.jpg",
+                titlu: "Secrets of the JavaScript Ninja",
+                autor: "John Resig, Bear Bibeault, Josip Maras",
                 an: 2018
             },
             {
-                imagine: "http://cti.ubm.ro/prw/03/book-icon.png",
-                titlu: "Secrets of the JavaScript Ninja 2nd Edition",
-                autor: "John Resig, Bear Bibeault, Josip Maras",
-                an: 2016
-            },
-            {
-                imagine: "https://images-na.ssl-images-amazon.com/images/I/51wijncY8L._SX342_SY445_QL70_FMwebp_.jpg",
-                titlu: "JavaScript: The Definitive Guide",
-                autor: "David Flanagan",
-                an: 2020
-            },
-            // Adaugă alte cărți aici
+                imagine: "09.jpg",
+                titlu: "Distributed Systems with Node.js",
+                autor: "Thomas Hunter II",
+                an: 2021
+            }
         ];
 
         var bookListDiv = document.getElementById("bookList");
@@ -52,10 +95,13 @@
             var book = books[i];
             var bookDiv = document.createElement("div");
             bookDiv.classList.add("book");
-            bookDiv.innerHTML = "<img src='" + book.imagine + "'>" +
-                                "<p><strong>Titlu:</strong> " + book.titlu + "</p>" +
-                                "<p><strong>Autor:</strong> " + book.autor + "</p>" +
-                                "<p><strong>An:</strong> " + book.an + "</p>";
+            var bookLink = "<a href='" + book.link + "' target='_blank'>";
+            var bookImage = "<img src='" + book.imagine + "'>";
+            var bookTitle = "<p><strong>Title:</strong> " + book.titlu + "</p>";
+            var bookAuthor = "<p><strong>Author:</strong> " + book.autor + "</p>";
+            var bookYear = book.an ? "<p><strong>Year:</strong> " + book.an + "</p>" : "";
+            var bookEndLink = "</a>";
+            bookDiv.innerHTML = bookLink + bookImage + bookTitle + bookAuthor + bookYear + bookEndLink;
             bookListDiv.appendChild(bookDiv);
         }
     </script>
