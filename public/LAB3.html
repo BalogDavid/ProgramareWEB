@@ -1,71 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <style>
-        table {
-            margin-top: 36px;
-            margin-left: 64px;
-            text-align: left;
-            border-collapse: collapse;
-        }
-        td, th {
-            padding-left: 12px;
-            padding-top: 9px;
-            padding-bottom: 4px;
-        }
-        th {
-            color: white;
-            background-color: rgb(59, 77, 104);
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        tr:nth-child(even) {
-            background: #ededed;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carti</title>
 </head>
 <body>
-    <p style="margin-left: 64px;">Acesta este un exemplu de construcție programatică a unui tabel HTML</p>
-</body>
-<script>
-    class Book {
-        constructor(t, a, an, img, link) {
-            this.titlu = t;
-            this.autori = a;
-            this.an = an;
-            this.img = img;
-            this.link = link;
-        }
-        static startTbl() {
-            document.write("<table border='2' width='800'>");
-            document.write("<tr><th>Titlu</th><th>Autori</th><th>An</th><th>Coperta</th>");
-        }
-        afiseazaCarte() {
-            document.write("<tr><td>");
-            if (typeof (this.link) == "string")
-                document.write("<a href='" + this.link + "'> " + this.titlu + "</a>");
-            else
-                document.write(this.titlu);
-            document.write("</td><td>" + this.autori + "</td><td>" + this.an + "</td><td>");
-            document.write('<img src=\'' + this.img + '\' width=64>');
-            document.write("</td></tr>");
-        }
-        static endTbl() {
-            document.write("</table>");
-        }
-    }
-    function myFunction() {
-        const icon = "http://cti.ubm.ro/prw/03/book-icon.png";
-        const b1 = new Book("Eloquent Javascript, 3rd Edition", ["Marijn Haverbeke"], 2018, icon);
-        const b2 = new Book("Secrets of the JavaScript Ninja 2nd Edition", ["John Resig", "Bear Bibeault", "Josip Maras"], 2016, icon);
-        const b3 = new Book("JavaScript: The Definitive Guide", ["David Flanagan"], 2020, "https://images-na.ssl-images-amazon.com/images/I/51wijncY8L._SX342_SY445_QL70_FMwebp_.jpg", "https://www.amazon.com/JavaScript-Definitive-Most-UsedProgramming-Language-ebook/dp/B088P9Q6BB/");
-        var books = [b1, b2, b3];
-        Book.startTbl();
+    <h1>Listă de cărți</h1>
+    <div id="bookList"></div>
+
+    <script>
+        var books = [
+            {
+                imagine: "http://cti.ubm.ro/prw/03/book-icon.png",
+                titlu: "Eloquent Javascript, 3rd Edition",
+                autor: "Marijn Haverbeke",
+                an: 2018
+            },
+            {
+                imagine: "http://cti.ubm.ro/prw/03/book-icon.png",
+                titlu: "Secrets of the JavaScript Ninja 2nd Edition",
+                autor: "John Resig, Bear Bibeault, Josip Maras",
+                an: 2016
+            },
+            {
+                imagine: "https://images-na.ssl-images-amazon.com/images/I/51wijncY8L._SX342_SY445_QL70_FMwebp_.jpg",
+                titlu: "JavaScript: The Definitive Guide",
+                autor: "David Flanagan",
+                an: 2020
+            },
+            // Adaugă alte cărți aici
+        ];
+
+        var bookListDiv = document.getElementById("bookList");
         for (var i = 0; i < books.length; i++) {
-            books[i].afiseazaCarte();
+            var book = books[i];
+            var bookDiv = document.createElement("div");
+            bookDiv.innerHTML = "<img src='" + book.imagine + "' width='100'><br>" +
+                                "<strong>Titlu:</strong> " + book.titlu + "<br>" +
+                                "<strong>Autor:</strong> " + book.autor + "<br>" +
+                                "<strong>An:</strong> " + book.an + "<br><br>";
+            bookListDiv.appendChild(bookDiv);
         }
-        Book.endTbl();
-    }
-    myFunction();
-</script>
+    </script>
+</body>
 </html>
