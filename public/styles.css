@@ -123,3 +123,24 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+
+
+#search-bar {
+    margin-left: auto;
+    margin-right: 20px;
+}
+#search-bar input[type="text"] {
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#search-bar input[type="submit"] {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
