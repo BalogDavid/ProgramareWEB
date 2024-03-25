@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #705555;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -60,10 +60,10 @@ section {
 }
 
 footer {
-    background-color: #333;
+    background-color: #705555;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
     position: fixed;
     bottom: 0;
     width: 100%;
