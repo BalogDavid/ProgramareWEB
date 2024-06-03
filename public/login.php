@@ -4,10 +4,8 @@ $username = "root";
 $password = "";
 $dbname = "user_database";
 
-// Crearea conexiunii
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificarea conexiunii
 if ($conn->connect_error) {
     die("Conexiunea a eșuat: " . $conn->connect_error);
 }
